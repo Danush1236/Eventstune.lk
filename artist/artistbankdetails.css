@@ -1,0 +1,598 @@
+/* Bank Details Section Styles */
+.bank-details-section {
+    max-width: 700px !important;
+    margin: 20px auto !important;
+    padding: 30px !important;
+    background: #fff !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+    animation: slideIn 0.5s ease-out !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.bank-details-section:hover {
+    box-shadow: 0 6px 25px rgba(33, 150, 243, 0.12) !important;
+}
+
+.bank-details-section::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    ) !important;
+    animation: shimmer 2s infinite !important;
+    pointer-events: none !important;
+}
+
+.bank-details-form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 25px !important;
+}
+
+.form-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    position: relative !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.form-group:hover {
+    transform: translateY(-2px) !important;
+}
+
+.form-group label {
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    font-size: 0.95rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.form-group label::before {
+    content: '•' !important;
+    color: #2196F3 !important;
+    font-size: 1.2rem !important;
+}
+
+.form-group input,
+.form-group select {
+    padding: 14px !important;
+    border: 2px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    background-color: #f8f9fa !important;
+    color: #2c3e50 !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #bdbdbd !important;
+    background-color: #fff !important;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2196F3 !important;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.15) !important;
+    outline: none !important;
+    background-color: #fff !important;
+    animation: borderGlow 2s infinite !important;
+    transform: translateY(-1px) !important;
+}
+
+@keyframes borderGlow {
+    0% { box-shadow: 0 0 5px rgba(33, 150, 243, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(33, 150, 243, 0.4); }
+    100% { box-shadow: 0 0 5px rgba(33, 150, 243, 0.2); }
+}
+
+.form-group input:disabled,
+.form-group select:disabled {
+    background: linear-gradient(
+        45deg,
+        #f5f5f5 25%,
+        #e0e0e0 50%,
+        #f5f5f5 75%
+    ) !important;
+    background-size: 200% 100% !important;
+    animation: shimmer 2s infinite !important;
+    cursor: not-allowed !important;
+    opacity: 0.8 !important;
+    border-color: #e0e0e0 !important;
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #f44336 !important;
+    background-color: #fff8f8 !important;
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
+}
+
+.form-text {
+    font-size: 0.85rem !important;
+    color: #666 !important;
+    margin-top: 6px !important;
+    font-style: italic !important;
+}
+
+.form-actions {
+    display: flex !important;
+    gap: 15px !important;
+    margin-top: 30px !important;
+}
+
+.btn-edit,
+.btn-save,
+.btn-cancel {
+    padding: 14px 28px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.btn-edit {
+    background-color: #2196F3 !important;
+    color: white !important;
+    box-shadow: 0 2px 5px rgba(33, 150, 243, 0.3) !important;
+}
+
+.btn-save {
+    background: linear-gradient(45deg, #2196F3, #1976D2) !important;
+    color: white !important;
+    box-shadow: 0 2px 5px rgba(33, 150, 243, 0.3) !important;
+}
+
+.btn-cancel {
+    background-color: #f44336 !important;
+    color: white !important;
+    box-shadow: 0 2px 5px rgba(244, 67, 54, 0.3) !important;
+}
+
+.btn-edit::after,
+.btn-save::after,
+.btn-cancel::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    transition: width 0.6s ease, height 0.6s ease !important;
+}
+
+.btn-edit:hover::after,
+.btn-save:hover::after,
+.btn-cancel:hover::after {
+    width: 300px !important;
+    height: 300px !important;
+}
+
+.btn-edit:hover,
+.btn-save:hover,
+.btn-cancel:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-edit:active,
+.btn-save:active,
+.btn-cancel:active {
+    transform: translateY(-1px) !important;
+}
+
+/* Saved details styles */
+.saved-details {
+    padding: 25px !important;
+    background: linear-gradient(to bottom right, #f8f9fa, #ffffff) !important;
+    border-radius: 12px !important;
+    animation: slideIn 0.5s ease-out !important;
+}
+
+.detail-item {
+    margin-bottom: 25px !important;
+    padding: 20px !important;
+    background-color: #ffffff !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: 1px solid #e0e0e0 !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.detail-item::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background: #2196F3 !important;
+    transform: scaleY(0) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.detail-item:hover::before {
+    transform: scaleY(1) !important;
+}
+
+.detail-item:hover {
+    transform: translateX(5px) !important;
+    box-shadow: 0 6px 15px rgba(33, 150, 243, 0.1) !important;
+    border-color: #2196F3 !important;
+}
+
+.detail-item label {
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    min-width: 180px !important;
+    margin-right: 20px !important;
+    font-size: 0.95rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: color 0.3s ease !important;
+}
+
+.detail-item label::before {
+    content: '•' !important;
+    color: #2196F3 !important;
+    font-size: 1.2rem !important;
+}
+
+.detail-item:hover label {
+    color: #2196F3 !important;
+}
+
+.detail-item span {
+    color: #34495e !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    flex: 1 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+}
+
+.detail-item:hover span {
+    transform: translateX(5px) !important;
+}
+
+.saved-details .btn-edit {
+    margin-top: 30px !important;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 16px !important;
+    font-size: 1.1rem !important;
+    background: linear-gradient(45deg, #2196F3, #1976D2) !important;
+}
+
+.saved-details .btn-edit:hover {
+    background: linear-gradient(45deg, #1976D2, #1565C0) !important;
+}
+
+/* Success message animation */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.success-message {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    background: linear-gradient(45deg, #2196F3, #1976D2) !important;
+    color: white !important;
+    padding: 16px 28px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3) !important;
+    z-index: 1000 !important;
+    animation: slideIn 0.5s ease-out, fadeInOut 3s ease-in-out !important;
+    backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    font-weight: 500 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.success-message::before {
+    content: '✓' !important;
+    font-size: 1.2rem !important;
+    animation: pulse 1s infinite !important;
+}
+
+/* Loading State Effects */
+.form-group.loading input,
+.form-group.loading select {
+    background: linear-gradient(
+        90deg,
+        #f8f9fa 25%,
+        #e9ecef 50%,
+        #f8f9fa 75%
+    ) !important;
+    background-size: 200% 100% !important;
+    animation: shimmer 1.5s infinite !important;
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+    .bank-details-section {
+        margin: 15px !important;
+        padding: 20px !important;
+        animation: slideIn 0.3s ease-out !important;
+    }
+
+    .form-actions {
+        flex-direction: column !important;
+    }
+
+    .btn-edit,
+    .btn-save,
+    .btn-cancel {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 16px !important;
+    }
+
+    .detail-item {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        padding: 15px !important;
+    }
+
+    .detail-item label {
+        min-width: auto !important;
+        margin-right: 0 !important;
+        font-size: 0.9rem !important;
+    }
+
+    .detail-item span {
+        font-size: 1rem !important;
+        width: 100% !important;
+    }
+
+    .saved-details {
+        padding: 15px !important;
+    }
+
+    .saved-details .btn-edit {
+        margin-top: 20px !important;
+        padding: 14px !important;
+    }
+
+    .detail-item:hover {
+        transform: translateX(3px) !important;
+    }
+
+    .btn-edit:hover,
+    .btn-save:hover,
+    .btn-cancel:hover {
+        transform: translateY(-2px) !important;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        transform: translateY(-1px) !important;
+    }
+}
+
+/* Custom Scrollbar */
+.bank-details-section::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.bank-details-section::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 4px !important;
+}
+
+.bank-details-section::-webkit-scrollbar-thumb {
+    background: #2196F3 !important;
+    border-radius: 4px !important;
+    transition: background 0.3s ease !important;
+}
+
+.bank-details-section::-webkit-scrollbar-thumb:hover {
+    background: #1976D2 !important;
+}
+
+/* Focus Ring Effect */
+.form-group input:focus-visible,
+.form-group select:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3),
+                0 0 0 6px rgba(33, 150, 243, 0.1) !important;
+}
+
+/* Disabled State Enhancement */
+.form-group input:disabled,
+.form-group select:disabled {
+    background: linear-gradient(
+        45deg,
+        #f5f5f5 25%,
+        #e0e0e0 50%,
+        #f5f5f5 75%
+    ) !important;
+    background-size: 200% 100% !important;
+    animation: shimmer 2s infinite !important;
+    cursor: not-allowed !important;
+}
+
+/* Error State Enhancement */
+.form-group input:invalid:not(:placeholder-shown) {
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translateX(-1px); }
+    20%, 80% { transform: translateX(2px); }
+    30%, 50%, 70% { transform: translateX(-4px); }
+    40%, 60% { transform: translateX(4px); }
+}
+
+/* Hover State for Form Groups */
+.form-group:hover input:not(:disabled),
+.form-group:hover select:not(:disabled) {
+    border-color: #2196F3 !important;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1) !important;
+}
+
+/* Active State for Buttons */
+.btn-edit:active,
+.btn-save:active,
+.btn-cancel:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Enhanced Detail Items */
+.detail-item {
+    background: linear-gradient(
+        to right,
+        #ffffff 0%,
+        #f8f9fa 50%,
+        #ffffff 100%
+    ) !important;
+    background-size: 200% 100% !important;
+    transition: all 0.3s ease !important;
+}
+
+.detail-item:hover {
+    background-position: 100% 0 !important;
+    border-color: #2196F3 !important;
+}
+
+/* Loading Animation for Save Button */
+.btn-save.loading {
+    position: relative !important;
+    color: transparent !important;
+}
+
+.btn-save.loading::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 20px !important;
+    height: 20px !important;
+    top: 50% !important;
+    left: 50% !important;
+    margin: -10px 0 0 -10px !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-top-color: #fff !important;
+    border-radius: 50% !important;
+    animation: spin 0.8s linear infinite !important;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Logout Button Styles */
+.sidebar-link.logout a {
+    color: #f44336 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.sidebar-link.logout a:hover {
+    color: #d32f2f !important;
+    background: linear-gradient(45deg, #ffebee, #ffcdd2) !important;
+    transform: translateX(5px) !important;
+}
+
+.sidebar-link.logout a i {
+    color: #f44336 !important;
+    transition: all 0.3s ease !important;
+}
+
+.sidebar-link.logout a:hover i {
+    color: #d32f2f !important;
+    transform: translateX(-3px) !important;
+}
+
+.sidebar-link.logout::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100% !important;
+    width: 3px !important;
+    background: #f44336 !important;
+    transform: scaleY(0) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.sidebar-link.logout:hover::before {
+    transform: scaleY(1) !important;
+}
+
+.sidebar-link.logout a::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, #f44336, transparent) !important;
+    transform: scaleX(0) !important;
+    transform-origin: left !important;
+    transition: transform 0.3s ease !important;
+}
+
+.sidebar-link.logout a:hover::after {
+    transform: scaleX(1) !important;
+}
+
+/* Active state for logout */
+.sidebar-link.logout.active a {
+    background: linear-gradient(45deg, #f44336, #d32f2f) !important;
+    color: white !important;
+}
+
+.sidebar-link.logout.active a i {
+    color: white !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar-link.logout a:hover {
+        transform: translateX(3px) !important;
+    }
+    
+    .sidebar-link.logout a:hover i {
+        transform: translateX(-2px) !important;
+    }
+} 

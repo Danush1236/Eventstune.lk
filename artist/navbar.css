@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #0a1128, #1282a2);
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 100;
+    max-width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(45deg, #1282a2, #0077b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.logo h1:hover {
+    text-shadow: 0 0 10px rgba(18, 130, 162, 0.7);
+    transform: scale(1.05);
+}
+
+.logo h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(45deg, #1282a2, #0077b6);
+    transition: width 0.5s ease;
+}
+
+.logo h1:hover::after {
+    width: 100%;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 8px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    padding: 5px 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #48cae4;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover {
+    color: #48cae4;
+    transform: translateY(-2px);
+}
+
+.menu a:hover::before {
+    width: 100%;
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .nav-right {
+        gap: 5px;
+    }
+    
+    .menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+        background: rgba(26, 26, 46, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+        clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+        transition: clip-path 0.5s ease-in-out;
+        z-index: -1;
+        gap: 8px;
+        margin: 0;
+    }
+
+    .menu.active {
+        clip-path: polygon(100% 0, 100% 0, 0 0, 0 100%, 100% 100%, 100% 0);
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu a {
+    opacity: 0;
+    animation: fadeInUp 0.5s forwards;
+}
+
+.menu a:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.menu a:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.menu a:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.logo h1 {
+    animation: pulse 3s infinite;
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #48cae4;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.navbar-profile-pic:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .navbar-profile {
+        margin-right: 0.2rem;
+    }
+    
+    .navbar-profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+} 

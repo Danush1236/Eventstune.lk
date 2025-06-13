@@ -1,0 +1,93 @@
+/* Shared Navigation Styles for Artist Pages */
+
+/* Logout Button Styles */
+.sidebar .sidebar-link.logout a {
+    color: #f44336 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: transparent !important;
+}
+
+.sidebar .sidebar-link.logout a:hover {
+    color: #d32f2f !important;
+    background: linear-gradient(45deg, #ffebee, #ffcdd2) !important;
+    transform: translateX(5px) !important;
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.2) !important;
+}
+
+.sidebar .sidebar-link.logout a i {
+    color: #f44336 !important;
+    transition: all 0.3s ease !important;
+    margin-right: 12px !important;
+}
+
+.sidebar .sidebar-link.logout a:hover i {
+    color: #d32f2f !important;
+    transform: translateX(-3px) !important;
+}
+
+.sidebar .sidebar-link.logout::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100% !important;
+    width: 3px !important;
+    background: #f44336 !important;
+    transform: scaleY(0) !important;
+    transition: transform 0.3s ease !important;
+    z-index: 1 !important;
+}
+
+.sidebar .sidebar-link.logout:hover::before {
+    transform: scaleY(1) !important;
+}
+
+.sidebar .sidebar-link.logout a::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, #f44336, transparent) !important;
+    transform: scaleX(0) !important;
+    transform-origin: left !important;
+    transition: transform 0.3s ease !important;
+}
+
+.sidebar .sidebar-link.logout a:hover::after {
+    transform: scaleX(1) !important;
+}
+
+/* Active state for logout */
+.sidebar .sidebar-link.logout.active a {
+    background: linear-gradient(45deg, #f44336, #d32f2f) !important;
+    color: white !important;
+    box-shadow: 0 2px 12px rgba(244, 67, 54, 0.3) !important;
+}
+
+.sidebar .sidebar-link.logout.active a i {
+    color: white !important;
+}
+
+/* Override any hover effects from other styles */
+.sidebar .sidebar-link.logout:hover::before {
+    background: none !important;
+}
+
+.sidebar .sidebar-link.logout a:hover {
+    background: linear-gradient(45deg, #ffebee, #ffcdd2) !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar .sidebar-link.logout a:hover {
+        transform: translateX(3px) !important;
+    }
+    
+    .sidebar .sidebar-link.logout a:hover i {
+        transform: translateX(-2px) !important;
+    }
+} 
